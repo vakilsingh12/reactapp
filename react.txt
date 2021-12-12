@@ -1,0 +1,11 @@
+My react notes : 
+
+
+Proptype : 
+Navbar.propTypes={
+title: PropTypes.string.isRequired
+}
+
+// Navbar.defaultProps={
+//   title:"Vakil"
+// }
