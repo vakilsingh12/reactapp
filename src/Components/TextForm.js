@@ -30,7 +30,7 @@ function TextForm(props) {
   return (
     <>
     <div>
-      <h2 className="mb-2" style={{color:props.mode==='dark'?'white':'dark'}}>{props.heading}</h2>
+      <h2 className="mb-2" style={{color:props.mode==='dark'?'white':'black'}}>{props.heading}</h2>
       <div className="mb-3">
         <textarea className="form-control" id="myBox" rows="6" value={text}
         onChange={handleOnchange}
@@ -42,7 +42,7 @@ function TextForm(props) {
       <button disabled={text.length===0} className="btn btn-primary mx-2" onClick={ClearText}>Clear Text</button>
       <button disabled={text.length===0} className="btn btn-primary mx-2" onClick={handleSpace}>handleExtraspace</button>
     </div>
-    <div className="container my-3" style={{color:props.mode==='dark'?'white':'dark'}}>
+    <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
       <h2>Your text summary</h2>
       <p><b>{text.length>0 ? text.trim().split(" ").length : 0}</b> Words, <b>{text.length} </b>Characters</p>
       <p><b>{0.008*text.split(" ").filter(res=>res.length!==0).length} </b>Minute read</p>

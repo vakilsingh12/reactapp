@@ -34,8 +34,13 @@ function Navbar(props) {
               </li>
             </ul>
             <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
-            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleMode}/>
+            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={()=>props.toggleMode(null)}/>
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark Mode Enable</label>
+          </div>
+          <div className="d-flex">
+             <div className="bg-success rounded mx-3 " onClick={()=>props.toggleMode("success")} style={{width:'30px',height:"30px",cursor:'pointer'}}></div>
+             <div className="bg-danger rounded" onClick={()=>props.toggleMode("danger")} style={{width:'30px',height:"30px",cursor:'pointer'}}></div>
+             <div className="bg-dark rounded mx-3" onClick={()=>props.toggleMode("dark")} style={{width:'30px',height:"30px",cursor:'pointer'}}></div>
           </div>
           </div>
         </div>

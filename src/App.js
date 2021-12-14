@@ -20,7 +20,18 @@ function App() {
       setalert(null)
     }, 1500);
   }
-  const toggleMode = (params) => {
+  const removeClass = (params) => {
+    document.body.classList.remove("bg-success");
+    document.body.classList.remove("bg-primary");
+    document.body.classList.remove("bg-danger");
+    document.body.classList.remove("bg-dark");
+    document.body.classList.remove("#3f30b2");
+  }
+  const toggleMode = (cls) => {
+    removeClass();
+    if(cls!==null){
+    document.body.classList.add('bg-'+cls);
+    }else{
     if(mode==="dark"){
       setMode("light");
       document.body.style.backgroundColor="#fff";
@@ -34,6 +45,7 @@ function App() {
     document.title="TextUtiles- dark mode!";
   };
   }
+}
   return (
     <Router>
       <>
