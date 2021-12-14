@@ -9,3 +9,5 @@ title: PropTypes.string.isRequired
 // Navbar.defaultProps={
 //   title:"Vakil"
 // }
+
+//document.getSelection().removeAllRanges();  //  remove selected option when using copy

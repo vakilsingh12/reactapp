@@ -1,31 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
-function About(props) {
-  const myStyle={
-    color:'black',
-    backgroundColor:'white'
+function About(props) { 
+  const color={
+    color:props.mode==="dark"?"white":"black",
+    backgroundColor:props.mode==="dark"?"#3f30b2":"white",
+    border:'1px solid',
+    borderColor:props.mode==="dark"?"white":"white"
   }
-  const [color, setColor] = useState(myStyle);
-  const [btn, setBtn] = useState("Enable Dark Mode");
-  const enableDark = () => {
-    if(color.color==='black'){
-      setColor({
-        color:'white',
-        backgroundColor:'black'
-      })
-      setBtn("Enable light Mode");
-    }else{
-      setColor({
-        color:'black',
-        backgroundColor:'white'
-      })
-      setBtn("Enable Dark Mode");
-    }
-  }
- 
   return (
-    <div style={color} className="container rounded">
-      <h2 className="my-2">{props.about}</h2>
+    <div style={props.color} className="container rounded">
+      <h2>{props.about}</h2>
       <div className="accordion accordion-flush text-dark" id="accordionFlushExample">
         <div className="accordion-item">
           <h2 className="accordion-header" id="flush-headingOne">
@@ -110,9 +94,6 @@ function About(props) {
             </div>
           </div>
         </div>
-      </div>
-      <div className="container my-4">
-      <button className="btn btn-secondary" onClick={enableDark}>{btn}</button><br /><br />
       </div>
     </div>
   );
