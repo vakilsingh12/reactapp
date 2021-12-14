@@ -18,7 +18,6 @@ function TextForm(props) {
     props.showAlert("Text cleared!","danger")
   }
   const CopyText=()=>{
-    navigator.clipboard.writeText(text);
     navigator.clipboard.writeText(text)
     props.showAlert("Text coppied!","success")
   }
@@ -44,7 +43,7 @@ function TextForm(props) {
     </div>
     <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
       <h2>Your text summary</h2>
-      <p><b>{text.length>0 ? text.trim().split(" ").length : 0}</b> Words, <b>{text.length} </b>Characters</p>
+      <p><b>{text.length>0 ? text.trim().split(/\s+/).length : 0}</b> Words, <b>{text.length} </b>Characters</p>
       <p><b>{0.008*text.split(" ").filter(res=>res.length!==0).length} </b>Minute read</p>
       <h3>Preview</h3>
       <p>{text.length>0?text:"Nothing to preview!"}</p><br />
